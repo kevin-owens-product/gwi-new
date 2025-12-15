@@ -1,7 +1,12 @@
 import Link from 'next/link';
-import { ArrowLeft, FileText, ExternalLink } from 'lucide-react';
+import { ArrowLeft, FileText } from 'lucide-react';
+import { promises as fs } from 'fs';
+import path from 'path';
+import MarkdownViewer from '@/components/MarkdownViewer';
 
-export default function Pillar3DocPage() {
+export default async function Pillar3DocPage() {
+  const filePath = path.join(process.cwd(), 'src', 'docs', 'PRD-Ambient-Intelligence.md');
+  const markdownContent = await fs.readFile(filePath, 'utf-8');
   return (
     <div className="min-h-screen bg-gray-50">
       <header className="bg-white border-b border-gray-200">
@@ -37,80 +42,22 @@ export default function Pillar3DocPage() {
           </div>
         </div>
 
-        <div className="bg-white border border-gray-200 rounded-lg p-6 mb-6">
-          <h2 className="text-xl font-bold text-[#1f2937] mb-4">Document Overview</h2>
-          <div className="prose prose-sm max-w-none">
-            <p className="text-gray-700 mb-4">
-              This comprehensive PRD outlines the Ambient Intelligence strategy to transform GWI from a destination platform into an always-available intelligence layer that meets users wherever they work through email, Slack, embeds, and other ambient touchpoints.
-            </p>
-
-            <h3 className="text-lg font-semibold text-[#1f2937] mb-3">Table of Contents</h3>
-            <ul className="space-y-2 text-gray-700">
-              <li>1. Problem Statement</li>
-              <li>2. Goals & Success Metrics</li>
-              <li>3. User Personas & Scenarios</li>
-              <li>4. Feature Specifications
-                <ul className="ml-6 mt-1 space-y-1">
-                  <li>• AI Intelligence Briefings</li>
-                  <li>• Embeddable Insights</li>
-                  <li>• Slack Integration</li>
-                  <li>• Shareable Insight Cards</li>
-                </ul>
-              </li>
-              <li>5. Technical Architecture</li>
-              <li>6. AI/ML Requirements</li>
-              <li>7. Integration Points</li>
-              <li>8. Security & Compliance</li>
-              <li>9. Rollout Strategy</li>
-            </ul>
-
-            <h3 className="text-lg font-semibold text-[#1f2937] mt-6 mb-3">Key Features</h3>
-            <ul className="space-y-2 text-gray-700">
-              <li><strong>AI Briefings:</strong> Personalized email/in-app digests on customizable schedules</li>
-              <li><strong>Embeddable Charts:</strong> Copy-paste embed codes for external websites and dashboards</li>
-              <li><strong>Slack Integration:</strong> Native app for workspace notifications and queries</li>
-              <li><strong>Insight Cards:</strong> Beautiful, shareable cards for email, social, and presentations</li>
-            </ul>
-
-            <h3 className="text-lg font-semibold text-[#1f2937] mt-6 mb-3">Success Metrics</h3>
-            <ul className="space-y-2 text-gray-700">
-              <li>40% of user interactions via ambient channels</li>
-              <li>3.5x increase in DAU/MAU ratio (0.15 to 0.53)</li>
-              <li>45% email open rate for briefings</li>
-              <li>450+ active embeds within 12 months</li>
-              <li>2.5x increase in insight shares</li>
-            </ul>
-          </div>
+        <div className="bg-white border border-gray-200 rounded-lg p-8 mb-6">
+          <MarkdownViewer content={markdownContent} />
         </div>
 
         <div className="bg-pink-50 border border-pink-200 rounded-lg p-6">
-          <h3 className="font-semibold text-[#1f2937] mb-4">How to View This Document</h3>
-          <div className="space-y-3">
-            <div className="flex items-start space-x-3">
-              <ExternalLink className="w-5 h-5 text-[#ec4899] mt-0.5" />
-              <div>
-                <div className="font-medium text-[#1f2937]">Clone the Repository</div>
-                <p className="text-sm text-gray-700 mt-1">
-                  Clone the git repository and open <code className="px-1.5 py-0.5 bg-pink-100 rounded text-xs">src/docs/PRD-Ambient-Intelligence.md</code> in your markdown viewer
-                </p>
-              </div>
-            </div>
-            <div className="flex items-start space-x-3">
-              <FileText className="w-5 h-5 text-[#ec4899] mt-0.5" />
-              <div>
-                <div className="font-medium text-[#1f2937]">View in VS Code or IDE</div>
-                <p className="text-sm text-gray-700 mt-1">
-                  Open the file in Visual Studio Code, IntelliJ, or any IDE with markdown preview support
-                </p>
-              </div>
-            </div>
-          </div>
-          <div className="mt-4 pt-4 border-t border-pink-300">
-            <Link href="/pillar3" className="inline-flex items-center space-x-2 text-[#ec4899] hover:text-[#db2777] font-medium">
-              <span>View Interactive Component Demos</span>
-              <ArrowLeft className="w-4 h-4 rotate-180" />
-            </Link>
-          </div>
+          <h3 className="font-semibold text-[#1f2937] mb-2">Ready to see it in action?</h3>
+          <p className="text-gray-700 text-sm mb-4">
+            Explore the interactive component demos for Pillar 3: Ambient Intelligence
+          </p>
+          <Link
+            href="/pillar3"
+            className="inline-flex items-center space-x-2 px-4 py-2 bg-[#ec4899] text-white rounded-lg hover:bg-[#db2777] transition-colors font-medium"
+          >
+            <span>View Interactive Component Demos</span>
+            <ArrowLeft className="w-4 h-4 rotate-180" />
+          </Link>
         </div>
       </div>
     </div>
