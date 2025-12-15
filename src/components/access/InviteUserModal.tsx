@@ -80,11 +80,11 @@ export const InviteUserModal: React.FC<InviteUserModalProps> = ({
         {/* Header */}
         <div className="flex items-center justify-between p-6 border-b border-gray-200">
           <div className="flex items-center space-x-3">
-            <div className="bg-blue-100 p-2 rounded-lg">
-              <Mail className="w-6 h-6 text-blue-600" />
+            <div className="bg-pink-100 p-2 rounded-lg">
+              <Mail className="w-6 h-6 text-[#ec4899]" />
             </div>
             <div>
-              <h2 className="text-xl font-semibold text-gray-900">Invite Team Member</h2>
+              <h2 className="text-xl font-semibold text-[#1f2937]">Invite Team Member</h2>
               <p className="text-sm text-gray-500">Add a new user to {organizationName}</p>
             </div>
           </div>
@@ -131,7 +131,7 @@ export const InviteUserModal: React.FC<InviteUserModalProps> = ({
                 onChange={(e) => setEmail(e.target.value)}
                 onKeyPress={handleKeyPress}
                 placeholder="colleague@example.com"
-                className="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                className="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#ec4899] focus:border-[#ec4899]"
                 disabled={isLoading}
               />
             </div>
@@ -151,8 +151,8 @@ export const InviteUserModal: React.FC<InviteUserModalProps> = ({
           </div>
 
           {/* Info Box */}
-          <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
-            <p className="text-sm text-blue-800">
+          <div className="bg-pink-50 border border-pink-200 rounded-lg p-4">
+            <p className="text-sm text-[#1f2937]">
               <strong>Note:</strong> The user will receive an email invitation with a link to join {organizationName}.
               They'll be assigned the selected role upon accepting the invitation.
             </p>
@@ -171,7 +171,7 @@ export const InviteUserModal: React.FC<InviteUserModalProps> = ({
           <button
             onClick={handleInvite}
             disabled={isLoading || success}
-            className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center space-x-2"
+            className="px-4 py-2 bg-[#ec4899] text-white rounded-lg hover:bg-[#db2777] transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center space-x-2"
           >
             {isLoading ? (
               <>

@@ -31,7 +31,7 @@ const roleIcons: Record<UserRole, React.ReactNode> = {
 
 const roleColors: Record<UserRole, string> = {
   viewer: 'bg-gray-100 text-gray-700',
-  contributor: 'bg-blue-100 text-blue-700',
+  contributor: 'bg-pink-100 text-[#ec4899]',
   analyst: 'bg-purple-100 text-purple-700',
   admin: 'bg-red-100 text-red-700',
 };
@@ -124,7 +124,7 @@ export const UserManagement: React.FC<UserManagementProps> = ({
               placeholder="Search users by name or email..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+              className="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#ec4899] focus:border-[#ec4899]"
             />
           </div>
 
@@ -148,7 +148,7 @@ export const UserManagement: React.FC<UserManagementProps> = ({
                 <select
                   value={roleFilter}
                   onChange={(e) => setRoleFilter(e.target.value as UserRole | 'all')}
-                  className="block w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                  className="block w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#ec4899] focus:border-[#ec4899]"
                 >
                   <option value="all">All Roles</option>
                   <option value="viewer">Viewer</option>
@@ -164,7 +164,7 @@ export const UserManagement: React.FC<UserManagementProps> = ({
                 <select
                   value={statusFilter}
                   onChange={(e) => setStatusFilter(e.target.value as User['status'] | 'all')}
-                  className="block w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                  className="block w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#ec4899] focus:border-[#ec4899]"
                 >
                   <option value="all">All Statuses</option>
                   <option value="active">Active</option>
@@ -229,7 +229,7 @@ export const UserManagement: React.FC<UserManagementProps> = ({
                             {user.avatar ? (
                               <img className="h-10 w-10 rounded-full" src={user.avatar} alt={user.name} />
                             ) : (
-                              <div className="h-10 w-10 rounded-full bg-blue-500 flex items-center justify-center text-white font-medium">
+                              <div className="h-10 w-10 rounded-full bg-[#ec4899] flex items-center justify-center text-white font-medium">
                                 {getInitials(user.name)}
                               </div>
                             )}

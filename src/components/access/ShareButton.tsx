@@ -88,7 +88,7 @@ export const ShareButton: React.FC<ShareButtonProps> = ({
     <div className={`relative ${className}`} ref={dropdownRef}>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center space-x-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors shadow-sm"
+        className="flex items-center space-x-2 px-4 py-2 bg-[#ec4899] text-white rounded-lg hover:bg-[#db2777] transition-colors shadow-sm"
         aria-label="Share"
         aria-expanded={isOpen}
       >
@@ -100,7 +100,7 @@ export const ShareButton: React.FC<ShareButtonProps> = ({
         <div className="absolute right-0 mt-2 w-80 bg-white rounded-lg shadow-xl border border-gray-200 z-50">
           {/* Header */}
           <div className="p-4 border-b border-gray-200">
-            <h3 className="font-semibold text-gray-900">Share {resourceTitle}</h3>
+            <h3 className="font-semibold text-[#1f2937]">Share {resourceTitle}</h3>
             <p className="text-sm text-gray-500 mt-1">Choose how you want to share</p>
           </div>
 
@@ -111,15 +111,15 @@ export const ShareButton: React.FC<ShareButtonProps> = ({
               onClick={handleCopyLink}
               className="w-full flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors"
             >
-              <div className="bg-blue-100 p-2 rounded-lg">
+              <div className="bg-pink-100 p-2 rounded-lg">
                 {copied ? (
                   <Check className="w-5 h-5 text-green-600" />
                 ) : (
-                  <Link2 className="w-5 h-5 text-blue-600" />
+                  <Link2 className="w-5 h-5 text-[#ec4899]" />
                 )}
               </div>
               <div className="flex-1 text-left">
-                <p className="font-medium text-gray-900">
+                <p className="font-medium text-[#1f2937]">
                   {copied ? 'Link copied!' : 'Copy link'}
                 </p>
                 <p className="text-sm text-gray-500">
@@ -137,11 +137,11 @@ export const ShareButton: React.FC<ShareButtonProps> = ({
                 }}
                 className="w-full flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors"
               >
-                <div className="bg-purple-100 p-2 rounded-lg">
-                  <Mail className="w-5 h-5 text-purple-600" />
+                <div className="bg-pink-100 p-2 rounded-lg">
+                  <Mail className="w-5 h-5 text-[#ec4899]" />
                 </div>
                 <div className="flex-1 text-left">
-                  <p className="font-medium text-gray-900">Invite by email</p>
+                  <p className="font-medium text-[#1f2937]">Invite by email</p>
                   <p className="text-sm text-gray-500">Send an invitation to specific people</p>
                 </div>
               </button>
@@ -161,7 +161,7 @@ export const ShareButton: React.FC<ShareButtonProps> = ({
               >
                 <div className="flex items-center space-x-2">
                   {currentPermission?.icon}
-                  <span className="font-medium text-gray-900">{currentPermission?.label}</span>
+                  <span className="font-medium text-[#1f2937]">{currentPermission?.label}</span>
                 </div>
                 <ChevronDown className={`w-4 h-4 text-gray-500 transition-transform ${showPermissions ? 'rotate-180' : ''}`} />
               </button>
@@ -173,20 +173,20 @@ export const ShareButton: React.FC<ShareButtonProps> = ({
                       key={permission.id}
                       onClick={() => handlePermissionSelect(permission.id)}
                       className={`w-full flex items-start space-x-3 p-3 hover:bg-gray-50 transition-colors first:rounded-t-lg last:rounded-b-lg ${
-                        selectedPermission === permission.id ? 'bg-blue-50' : ''
+                        selectedPermission === permission.id ? 'bg-pink-50' : ''
                       }`}
                     >
-                      <div className={`mt-0.5 ${selectedPermission === permission.id ? 'text-blue-600' : 'text-gray-600'}`}>
+                      <div className={`mt-0.5 ${selectedPermission === permission.id ? 'text-[#ec4899]' : 'text-gray-600'}`}>
                         {permission.icon}
                       </div>
                       <div className="flex-1 text-left">
-                        <p className={`font-medium ${selectedPermission === permission.id ? 'text-blue-900' : 'text-gray-900'}`}>
+                        <p className={`font-medium ${selectedPermission === permission.id ? 'text-[#1f2937]' : 'text-[#1f2937]'}`}>
                           {permission.label}
                         </p>
                         <p className="text-sm text-gray-500">{permission.description}</p>
                       </div>
                       {selectedPermission === permission.id && (
-                        <Check className="w-5 h-5 text-blue-600" />
+                        <Check className="w-5 h-5 text-[#ec4899]" />
                       )}
                     </button>
                   ))}

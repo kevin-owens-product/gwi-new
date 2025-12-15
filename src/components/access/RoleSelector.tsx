@@ -71,7 +71,7 @@ export const RoleSelector: React.FC<RoleSelectorProps> = ({
               key={role.id}
               className={`
                 relative p-4 border-2 rounded-lg cursor-pointer transition-all
-                ${isSelected ? 'border-blue-500 bg-blue-50' : 'border-gray-200 hover:border-blue-300'}
+                ${isSelected ? 'border-[#ec4899] bg-pink-50' : 'border-gray-200 hover:border-[#ec4899]'}
                 ${disabled ? 'opacity-50 cursor-not-allowed' : ''}
                 ${isHovered && !disabled ? 'shadow-md' : ''}
               `}
@@ -85,18 +85,18 @@ export const RoleSelector: React.FC<RoleSelectorProps> = ({
             >
               {isSelected && (
                 <div className="absolute top-2 right-2">
-                  <div className="bg-blue-500 rounded-full p-1">
+                  <div className="bg-[#ec4899] rounded-full p-1">
                     <Check className="w-4 h-4 text-white" />
                   </div>
                 </div>
               )}
 
               <div className="flex items-start space-x-3">
-                <div className={`p-2 rounded-lg ${isSelected ? 'bg-blue-100 text-blue-600' : 'bg-gray-100 text-gray-600'}`}>
+                <div className={`p-2 rounded-lg ${isSelected ? 'bg-pink-100 text-[#ec4899]' : 'bg-gray-100 text-gray-600'}`}>
                   {role.icon}
                 </div>
                 <div className="flex-1">
-                  <h3 className={`font-semibold text-lg ${isSelected ? 'text-blue-900' : 'text-gray-900'}`}>
+                  <h3 className={`font-semibold text-lg ${isSelected ? 'text-[#1f2937]' : 'text-[#1f2937]'}`}>
                     {role.name}
                   </h3>
                   <p className="text-sm text-gray-600 mt-1">{role.description}</p>
@@ -107,7 +107,7 @@ export const RoleSelector: React.FC<RoleSelectorProps> = ({
                       <ul className="text-sm text-gray-600 space-y-1">
                         {role.permissions.map((permission, index) => (
                           <li key={index} className="flex items-start">
-                            <span className="text-blue-500 mr-2">•</span>
+                            <span className="text-[#ec4899] mr-2">•</span>
                             <span>{permission}</span>
                           </li>
                         ))}
