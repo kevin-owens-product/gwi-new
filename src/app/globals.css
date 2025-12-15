@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-pink: #ec4899;
+  --primary-dark: #1f2937;
+  --hover-pink: #db2777;
+}
+
+body {
+  color: var(--primary-dark);
+  background: #ffffff;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
