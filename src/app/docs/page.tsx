@@ -132,13 +132,14 @@ export default function DocsPage() {
                     </ul>
                   </div>
 
-                  <div className="pt-4 border-t border-gray-200">
-                    <div className="flex items-center justify-between mb-2">
-                      <span className="text-sm font-medium text-gray-700">File Location:</span>
-                    </div>
-                    <code className="block text-xs bg-gray-100 text-gray-800 px-3 py-2 rounded font-mono break-all">
-                      src/docs/{doc.file}
-                    </code>
+                  <div className="flex items-center space-x-2 pt-4 border-t border-gray-200">
+                    <Link
+                      href={`/docs/pillar${idx + 1}`}
+                      className="flex-1 flex items-center justify-center space-x-2 px-4 py-2 bg-[#ec4899] text-white rounded-lg hover:bg-[#db2777] transition-colors"
+                    >
+                      <FileText className="w-4 h-4" />
+                      <span>View Document</span>
+                    </Link>
                   </div>
                 </div>
               </div>
