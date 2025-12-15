@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { ArrowLeft, FileText, Shield, Users, Sparkles, Brain, ExternalLink, Download } from 'lucide-react';
+import { ArrowLeft, FileText, Shield, Users, Sparkles, Brain, ExternalLink } from 'lucide-react';
 
 export default function DocsPage() {
   const docs = [
@@ -132,19 +132,13 @@ export default function DocsPage() {
                     </ul>
                   </div>
 
-                  <div className="flex items-center space-x-2 pt-4 border-t border-gray-200">
-                    <a
-                      href={`https://github.com/your-repo/gwi-new/blob/main/src/docs/${doc.file}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex-1 flex items-center justify-center space-x-2 px-4 py-2 bg-[#ec4899] text-white rounded-lg hover:bg-[#db2777] transition-colors"
-                    >
-                      <ExternalLink className="w-4 h-4" />
-                      <span>View on GitHub</span>
-                    </a>
-                    <button className="p-2 text-gray-600 hover:text-[#ec4899] hover:bg-gray-100 rounded-lg transition-colors">
-                      <Download className="w-5 h-5" />
-                    </button>
+                  <div className="pt-4 border-t border-gray-200">
+                    <div className="flex items-center justify-between mb-2">
+                      <span className="text-sm font-medium text-gray-700">File Location:</span>
+                    </div>
+                    <code className="block text-xs bg-gray-100 text-gray-800 px-3 py-2 rounded font-mono break-all">
+                      src/docs/{doc.file}
+                    </code>
                   </div>
                 </div>
               </div>
